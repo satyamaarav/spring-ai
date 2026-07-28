@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: Open-Ai-Project
+
+server:
+  port: 8081
+
+# API KEY FOR OPENAI
+  openai:
+    api-key: ${OPENAI_API_KEY}
