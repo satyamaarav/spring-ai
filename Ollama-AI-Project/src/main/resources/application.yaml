@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Ollama-AI-Project
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: codellama
+
+server:
+  port: 8081
