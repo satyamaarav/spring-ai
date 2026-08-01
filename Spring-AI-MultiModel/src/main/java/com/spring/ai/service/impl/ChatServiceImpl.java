@@ -3,6 +3,8 @@ package com.spring.ai.service.impl;
 import com.spring.ai.entity.Tut;
 import com.spring.ai.service.ChatService;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
@@ -57,6 +59,18 @@ public class ChatServiceImpl implements ChatService {
                 .prompt(query)
                 .call()
                 .entity(new ParameterizedTypeReference<List<Tut>>() {});
+    }
+
+    @Override
+    public String promptSpecific(String query) {
+        // Implementation for specific prompt handling
+        Prompt prompt = new Prompt(query, OpenAiChatOptions.builder()
+                .model("gpt-4o-mini")
+                .temperature(0.7)
+                .maxTokens(100)
+                .build());
+
+        return chatClient.prompt(prompt).call().content();
     }
 
 }

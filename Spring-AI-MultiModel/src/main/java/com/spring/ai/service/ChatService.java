@@ -11,4 +11,6 @@ public interface ChatService {
     Tut getTut(String query);
 
     List<Tut> getTutResponses(String query);
+
+    String promptSpecific(String query);
 }
