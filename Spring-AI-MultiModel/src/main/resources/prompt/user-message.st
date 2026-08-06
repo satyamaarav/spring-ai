@@ -1,0 +1,1 @@
+Explain the coding concept {concept} in simple terms.Sure! Please provide the coding concept you would like me to explain.
